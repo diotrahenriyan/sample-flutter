@@ -34,9 +34,35 @@ class _SplashScreenState extends State<SplashScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: new Center(
-        child: new Image.asset('images/baranenergy_logo.jpeg'),
+    return Scaffold(
+      body:Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.lightBlue,
+              gradient: LinearGradient(
+                colors: [Colors.lightBlue, Colors.lightBlue[900]],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              )
+            ),
+          ), 
+
+          Column (
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:<Widget>[
+              CircleAvatar(
+                backgroundColor:Colors.transparent,
+                radius:75.0,
+                child: new Image.asset('images/baranenergy_logo.png'),
+              ), 
+              Padding(
+                padding:EdgeInsets.only(top: 10.0),
+              )
+            ]
+          )
+        ],
       ),
     );
   }
